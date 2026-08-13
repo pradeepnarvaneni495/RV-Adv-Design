@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark-luxury">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RV ADVENTURE DESIGN — Pure Dark Luxury Off-Grid Outfitting & Expedition Gear</title>
+  <meta name="description" content="Next-generation luxury RV outfitting, off-grid lithium solar power stations, hard-shell rooftop tents, and expedition adventure gear." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- 1. TOP ANNOUNCEMENT BAR -->
+  <div class="top-bar">
+    <div class="promo-text">
+      <span class="promo-tag">OFF-GRID FREIGHT</span>
+      <span>Free Nationwide Freight Shipping on Orders Over $1,500</span>
+    </div>
+    
+    <div class="top-bar-links">
+      <a href="#tracking">Track Order</a>
+      <span>|</span>
+      <a href="#policy">Policy & Returns</a>
+      <span>|</span>
+      <a href="javascript:void(0)" onclick="openLoginModal()">Account Login</a>
+    </div>
+  </div>
+
+  <!-- 2. STICKY FLOATING GLASS NAVBAR -->
+  <header class="header-sticky">
+    <nav class="nav-container">
+      <a href="#home" class="brand-logo">
+        <div class="brand-icon">▲</div>
+        <span>RV ADVENTURE</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#category/all" class="nav-link">Categories</a></li>
+        <li><a href="#brands" class="nav-link">Brands</a></li>
+        <li><a href="#home#bento" class="nav-link">Featured</a></li>
+        <li><a href="#tracking" class="nav-link">Order Tracking</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="search-bar">
+          <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="live-search" class="search-input" placeholder="Search lithium, tents..." />
+        </div>
+
+        <button class="icon-btn" title="User Account" onclick="openLoginModal()">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+
+        <button class="icon-btn" title="View Rig Cart" onclick="openCartDrawer()">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="badge-count" id="cart-count">1</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       SPA VIEWS CONTAINER
+       ========================================================================== -->
+
+  <!-- VIEW 1: HOME PAGE -->
+  <main class="spa-view active" id="view-home">
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge-strip">
+              <span>⚡ 2026 DARK LUXURY EDITION</span>
+              <span>•</span>
+              <span>OFF-GRID POWER & ADVENTURE OUTFITTING</span>
+            </div>
+            
+            <h1 class="hero-title">Engineered for <span>Off-Grid Freedom.</span></h1>
+            
+            <p class="hero-subtitle">
+              Transform your camper van or 4x4 into an unstoppable overland sanctuary with military-grade lithium power systems, carbon rooftop tents, and modular gear setups.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#category/all" class="btn-primary">
+                Explore Catalog
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+              <a href="#checkout" class="btn-secondary">
+                ⚡ Build Custom Rig
+              </a>
+            </div>
+          </div>
+
+          <!-- Telemetry Widget -->
+          <div class="telemetry-card">
+            <div class="telemetry-header">
+              <span class="telemetry-title">Rig Telemetry Specs</span>
+              <span class="live-dot" title="Systems Active"></span>
+            </div>
+            <div class="telemetry-stats">
+              <div class="stat-item">
+                <div class="stat-value">5.1 kWh</div>
+                <div class="stat-label">Off-Grid Solar Capacity</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">-30°F</div>
+                <div class="stat-label">Sub-Zero Thermal Spec</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">2-Min</div>
+                <div class="stat-label">Rapid Tent Deployment</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">IP68</div>
+                <div class="stat-label">Water & Dust Resistance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop By Categories Horizontal Strip -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">EXPLORE BY HARDWARE CATEGORY</span>
+        <h2 class="section-title">Shop Adventure Equipment</h2>
+      </div>
+      <div class="categories-scroll-row" id="categories-scroll-row">
+        <!-- Injected dynamically via app.js -->
+      </div>
+    </section>
+
+    <!-- Shoppable Hotspots -->
+    <section class="section-container" style="padding-top: 0;">
+      <div class="section-header">
+        <span class="section-subtitle">INTERACTIVE RIG EXPLORER</span>
+        <h2 class="section-title">Tap Hotspots to Explore Mounted Gear</h2>
+      </div>
+
+      <div class="hotspot-banner">
+        <div class="hotspot-overlay-dark"></div>
+        <div class="hotspot-pin" style="top: 18%; left: 75%;" onclick="openQuickView(1)">1</div>
+        <div class="hotspot-pin" style="top: 55%; left: 25%;" onclick="openQuickView(2)">2</div>
+        <div class="hotspot-pin" style="top: 12%; left: 62%;" onclick="openQuickView(3)">3</div>
+        <div class="hotspot-pin" style="top: 72%; left: 70%;" onclick="openQuickView(5)">4</div>
+
+        <div class="hotspot-card" id="hotspot-card">
+          <img src="assets/cat_tent.jpg" class="hotspot-thumb" alt="Apex Tent" onError="this.onerror=null; this.src='assets/rooftop_tent.jpg';" />
+          <div>
+            <h4 style="font-size: 0.9rem;">Apex II Hard-Shell Rooftop Tent</h4>
+            <div style="font-weight: 800; color: var(--accent-primary);">$3,450</div>
+          </div>
+          <button class="add-cart-btn" style="padding: 6px 12px; font-size: 0.75rem;" onclick="addToCart(1)">Quick Add</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Showcase -->
+    <section class="section-container" id="bento" style="padding-top: 0;">
+      <div class="section-header">
+        <span class="section-subtitle">CURATED BENTO GRID</span>
+        <h2 class="section-title">Featured Expedition Systems</h2>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item span-2-col span-2-row">
+          <img src="assets/solar_generator.jpg" class="bento-bg-image" alt="Solar" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div class="bento-content">
+            <span class="bento-tag">FEATURED COMMAND CENTER</span>
+            <h3 class="bento-title" style="font-size: 2rem;">Off-Grid Lithium Power Array</h3>
+            <p class="bento-desc" style="max-width: 400px; margin-bottom: 20px;">
+              High-capacity 2400W energy generators equipped with folding solar panels for infinite backcountry power.
+            </p>
+          </div>
+          <div>
+            <a href="#category/power" class="btn-primary">Shop Solar Stations →</a>
+          </div>
+        </div>
+
+        <div class="bento-item span-2-col">
+          <img src="assets/cat_tent.jpg" class="bento-bg-image" alt="Tents" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div class="bento-content">
+            <span class="bento-tag">OVERLAND SHELTERS</span>
+            <h3 class="bento-title">Apex Carbon Rooftop Tents</h3>
+            <p class="bento-desc">Deploy shelter in under 120 seconds with carbon fiber hard shells.</p>
+          </div>
+          <div>
+            <a href="#category/tents" style="color: var(--accent-primary); font-weight: 700;">Explore Tents →</a>
+          </div>
+        </div>
+
+        <div class="bento-item">
+          <img src="assets/cat_kitchen.jpg" class="bento-bg-image" alt="Kitchen" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div class="bento-content">
+            <span class="bento-tag">MODULAR LIVING</span>
+            <h3 class="bento-title">Camp Kitchens</h3>
+            <p class="bento-desc">Titanium slide-out units.</p>
+          </div>
+          <div>
+            <a href="#category/kitchen" style="color: var(--accent-primary); font-weight: 700;">View Kitchens →</a>
+          </div>
+        </div>
+
+        <div class="bento-item">
+          <img src="assets/cat_recovery.jpg" class="bento-bg-image" alt="Recovery" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div class="bento-content">
+            <span class="bento-tag">RECOVERY GEAR</span>
+            <h3 class="bento-title">Traction & Winches</h3>
+            <p class="bento-desc">Heavy duty 10-ton tracks.</p>
+          </div>
+          <div>
+            <a href="#category/expedition" style="color: var(--accent-primary); font-weight: 700;">View Recovery →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Catalog Matrix -->
+    <section class="section-container" id="catalog">
+      <div class="section-header">
+        <span class="section-subtitle">HIGH-PERFORMANCE HARDWARE</span>
+        <h2 class="section-title">Explore Adventure Catalog</h2>
+      </div>
+
+      <div class="filter-bar">
+        <div class="category-tabs">
+          <button class="tab-btn active" onclick="filterCategory('all', this)">All Items</button>
+          <button class="tab-btn" onclick="filterCategory('power', this)">Off-Grid Power</button>
+          <button class="tab-btn" onclick="filterCategory('tents', this)">Tents & Shelters</button>
+          <button class="tab-btn" onclick="filterCategory('expedition', this)">Expedition Gear</button>
+          <button class="tab-btn" onclick="filterCategory('kitchen', this)">Kitchen & Living</button>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Sort By:</span>
+          <select onchange="sortProducts(this.value)" style="background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: var(--radius-pill); outline: none;">
+            <option value="featured">Featured First</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
+    <!-- Brand Logos Showcase -->
+    <section class="section-container" id="brands-section">
+      <div class="section-header">
+        <span class="section-subtitle">AUTHORIZED OUTFITTERS</span>
+        <h2 class="section-title">Premier Expedition Brands</h2>
+      </div>
+      <div class="brand-grid" id="brand-grid">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
+    <!-- Verified Customer Reviews Slider -->
+    <section class="section-container" id="reviews-section">
+      <div class="section-header">
+        <span class="section-subtitle">VERIFIED TRAIL TESTIMONIALS</span>
+        <h2 class="section-title">What Explorers Are Saying</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;" id="reviews-grid">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VIEW 2: CATEGORY DETAILS PAGE -->
+  <main class="spa-view" id="view-category">
+    <div class="section-container">
+      <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 32px;">
+        <span class="section-subtitle">CATEGORY HARDWARE MATRIX</span>
+        <h1 class="section-title" id="cat-view-title">Category Products</h1>
+      </div>
+      <div class="product-grid" id="category-product-grid">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- VIEW 3: BRAND DETAILS PAGE -->
+  <main class="spa-view" id="view-brand">
+    <div class="section-container">
+      <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 32px;">
+        <span class="section-subtitle">AUTHORIZED BRAND CATALOG</span>
+        <h1 class="section-title" id="brand-view-title">Brand Collection</h1>
+      </div>
+      <div class="product-grid" id="brand-product-grid">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- VIEW 4: PRODUCT DETAILS PAGE -->
+  <main class="spa-view" id="view-product">
+    <div class="section-container" id="product-detail-container">
+      <!-- Injected via app.js -->
+    </div>
+  </main>
+
+  <!-- VIEW 5: CHECKOUT & MULTI-STEP ORDER WIZARD -->
+  <main class="spa-view" id="view-checkout">
+    <div class="section-container">
+      <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 32px;">
+        <span class="section-subtitle">SECURE RIG CHECKOUT</span>
+        <h1 class="section-title">Complete Your Expedition Order</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; border-radius: var(--radius-lg);">
+          <h3 style="margin-bottom: 20px;">1. Shipping Address</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+            <input type="text" placeholder="First Name" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff;" />
+            <input type="text" placeholder="Last Name" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff;" />
+            <input type="email" placeholder="Email Address" style="grid-column: span 2; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff;" />
+            <input type="text" placeholder="Street Address" style="grid-column: span 2; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff;" />
+            <input type="text" placeholder="City" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff;" />
+            <input type="text" placeholder="State / Postcode" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff;" />
+          </div>
+
+          <h3 style="margin-bottom: 20px;">2. Payment Details</h3>
+          <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+            <button class="tab-btn active" style="flex-grow: 1;">Credit Card (Stripe)</button>
+            <button class="tab-btn" style="flex-grow: 1;">PayPal Express</button>
+          </div>
+
+          <button class="btn-primary" style="width: 100%; justify-content: center; padding: 16px;" onclick="showToast('Expedition Order Confirmed! Order #RV-84920 generated.'); window.location.hash='#home';">
+            Place Expedition Order
+          </button>
+        </div>
+
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 32px; border-radius: var(--radius-lg); height: fit-content;">
+          <h3 style="margin-bottom: 20px;">Order Summary</h3>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem;">
+            <span>Gear Items Subtotal:</span>
+            <span style="font-weight: 700; color: var(--accent-primary);">$3,450.00</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem;">
+            <span>Nationwide Freight Shipping:</span>
+            <span style="color: #10b981; font-weight: 700;">FREE</span>
+          </div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 16px; margin-top: 16px; display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 800;">
+            <span>Total:</span>
+            <span style="color: var(--accent-primary);">$3,450.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- VIEW 6: GUEST ORDER TRACKING -->
+  <main class="spa-view" id="view-tracking">
+    <div class="section-container" style="max-width: 600px;">
+      <div class="section-header" style="text-align: center;">
+        <span class="section-subtitle">FIELD ORDER TELEMETRY</span>
+        <h1 class="section-title">Track Expedition Order</h1>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; border-radius: var(--radius-lg);">
+        <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 8px;">Order Reference ID (e.g. RV-84920)</label>
+        <input type="text" id="track-order-id" placeholder="Enter Order ID" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff; margin-bottom: 20px; outline: none;" />
+        
+        <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 8px;">Account Email</label>
+        <input type="email" id="track-email" placeholder="Enter your email" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff; margin-bottom: 24px; outline: none;" />
+
+        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="showToast('Status: Dispatch In Transit via Toll Freight. ETA 2 Days.')">
+          Lookup Order Telemetry
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- VIEW 7: POLICY & TERMS -->
+  <main class="spa-view" id="view-policy">
+    <div class="section-container" style="max-width: 800px;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 20px;">Expedition Terms & Return Policies</h1>
+      <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px;">
+        All hardware comes backed by our 5-Year Off-Grid Warranty and 30-Day Trail Guarantee. If your equipment encounters any manufacturing issues during backcountry field use, our tech team will replace or repair components immediately.
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--bg-primary); border-top: 1px solid var(--border-color); padding: 60px 24px 30px; margin-top: 80px;">
+    <div style="max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px;">
+      <div>
+        <a href="#home" class="brand-logo" style="margin-bottom: 16px; display: inline-flex;">
+          <div class="brand-icon">▲</div>
+          <span>RV ADVENTURE</span>
+        </a>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+          Leading creator of luxury overland camper outfitting, high-capacity solar power hubs, and off-grid expedition equipment.
+        </p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; margin-bottom: 16px; color: var(--accent-primary);">Products</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+          <li><a href="#category/power">Off-Grid Solar Stations</a></li>
+          <li><a href="#category/tents">Hard-Shell Rooftop Tents</a></li>
+          <li><a href="#category/racks">Modular Roof Racks</a></li>
+          <li><a href="#category/kitchen">Titanium Camp Kitchens</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; margin-bottom: 16px; color: var(--accent-primary);">Support</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+          <li><a href="#tracking">Track Order Status</a></li>
+          <li><a href="#policy">Warranty & Returns</a></li>
+          <li><a href="javascript:void(0)" onclick="openLoginModal()">Account Portal</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; margin-bottom: 16px; color: var(--accent-primary);">Newsletter</h4>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Get off-grid build guides & secret gear drops.</p>
+        <div style="display: flex; gap: 8px;">
+          <input type="email" placeholder="Enter your email" style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 8px 12px; border-radius: var(--radius-pill); color: #fff; font-size: 0.85rem; outline: none; flex-grow: 1;" />
+          <button class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem;" onclick="showToast('Subscribed to Off-Grid Dispatch!')">Join</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width: 1360px; margin: 0 auto; text-align: center; border-top: 1px solid var(--border-color); padding-top: 24px; font-size: 0.8rem; color: var(--text-muted);">
+      © 2026 RV ADVENTURE DESIGN. Connected to backend API endpoint. Pure Dark Luxury Theme.
+    </div>
+  </footer>
+
+  <!-- SLIDE-OUT CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Rig Gear Cart</h3>
+      <button onclick="closeCartDrawer()" style="font-size: 1.4rem; color: var(--text-muted);">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-body">
+      <!-- Injected via app.js -->
+    </div>
+    <div class="cart-footer">
+      <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 800; margin-bottom: 16px;">
+        <span>Subtotal:</span>
+        <span id="cart-total">$3,450</span>
+      </div>
+      <a href="#checkout" class="btn-primary" style="width: 100%; justify-content: center;" onclick="closeCartDrawer()">
+        Proceed to Checkout
+      </a>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal-overlay" id="quick-view-modal" onclick="if(event.target === this) closeModal()">
+    <div class="modal-content">
+      <button style="position: absolute; top: 16px; right: 20px; font-size: 1.6rem; color: var(--text-muted);" onclick="closeModal()">&times;</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN / ACCOUNT MODAL -->
+  <div class="modal-overlay" id="login-modal" onclick="if(event.target === this) closeModal()">
+    <div class="modal-content" style="max-width: 450px;">
+      <button style="position: absolute; top: 16px; right: 20px; font-size: 1.6rem; color: var(--text-muted);" onclick="closeModal()">&times;</button>
+      <h2 style="margin-bottom: 12px; text-align: center;">Account Login</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-bottom: 24px;">Enter your credentials to access saved builds and order telemetry.</p>
+      
+      <input type="email" placeholder="Email Address" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff; margin-bottom: 14px; outline: none;" />
+      <input type="password" placeholder="Password" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); color: #fff; margin-bottom: 20px; outline: none;" />
+
+      <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="showToast('Logged in successfully!'); closeModal();">
+        Sign In
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
