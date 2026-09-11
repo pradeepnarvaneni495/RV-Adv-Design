@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-concept="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RV ADVENTURE DESIGN — Version 2 (Behance Trending Light Theme)</title>
+  <meta name="description" content="Next-generation luxury RV outfitting, off-grid lithium solar power stations, and expedition adventure gear designed in Behance light aesthetic." />
+  <link rel="stylesheet" href="styles_v2.css" />
+</head>
+<body>
+
+  <!-- 1. VERSION 2 CONCEPT SWITCHER BAR -->
+  <div class="v2-concept-bar">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="background: var(--accent-primary); color: #000; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">VERSION 2 SUITE</span>
+      <span>Select Behance Light Concept to Preview:</span>
+    </div>
+
+    <div class="concept-pills">
+      <button class="concept-btn active" data-set-concept="editorial" onclick="setConcept('editorial')">Concept 1: Alpine Editorial</button>
+      <button class="concept-btn" data-set-concept="minimalist" onclick="setConcept('minimalist')">Concept 2: Scandinavian Minimalist</button>
+      <button class="concept-btn" data-set-concept="technical" onclick="setConcept('technical')">Concept 3: Technical Blueprint</button>
+      <span style="opacity: 0.4;">|</span>
+      <a href="index.html" style="color: #ff9e2c; font-weight: 700; font-size: 0.8rem; text-decoration: underline;">Switch to Version 1 (Dark Luxury)</a>
+    </div>
+  </div>
+
+  <!-- 2. STICKY HEADER V2 -->
+  <header class="header-v2">
+    <nav class="nav-container-v2">
+      <a href="index_v2.html" class="brand-v2">
+        <span>▲</span> RV ADVENTURE 
+      </a>
+
+      <ul class="nav-menu-v2">
+        <li><a href="#v2-hero">Home</a></li>
+        <li><a href="#v2-bento">Curated Systems</a></li>
+        <li><a href="#v2-catalog">Equipment Catalog</a></li>
+        <li><a href="#v2-journal">The Journal</a></li>
+      </ul>
+
+      <div class="nav-actions-v2">
+        <button class="btn-v2-primary" style="padding: 10px 22px; font-size: 0.85rem;" onclick="location.href='#v2-catalog'">
+          Explore Gear Catalog
+        </button>
+
+        <button style="position: relative; padding: 10px 16px; background: var(--bg-secondary); border-radius: var(--radius-pill); font-weight: 700; border: 1px solid var(--border-color);" onclick="showToastV2('Viewing Version 2 Cart')">
+          🛒 Rig Cart (<span id="v2-cart-count">1</span>)
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 3. HERO CANVAS V2 (BEHANCE EDITORIAL MAGAZINE) -->
+  <section class="hero-v2" id="v2-hero">
+    <div class="hero-grid-v2">
+      <div>
+        <span class="hero-issue-tag">N° 04 • EXPEDITION EQUIPMENT ISSUE</span>
+        <h1 class="hero-title-v2">Engineered for the <span>Backcountry.</span></h1>
+        <p class="hero-desc-v2">
+          Discover high-performance camper outfitting, lithium power command centers, and lightweight carbon shelters built for long-term off-grid independence.
+        </p>
+
+        <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+          <a href="#v2-catalog" class="btn-v2-primary">
+            Explore 2026 Hardware
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          <button class="btn-v2-primary" style="background: var(--bg-secondary); color: var(--text-primary); box-shadow: none; border: 1px solid var(--border-color);" onclick="openV2QuickView(1)">
+            Preview Apex Tent
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-image-frame">
+        <img src="assets/hero.jpg" alt="Expedition Camper Van" onError="this.onerror=null; this.src='assets/cat_tent.jpg';" />
+        <div class="hero-floating-card">
+          <div style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 800; text-transform: uppercase;">AURORA OVERLAND SPEC</div>
+          <div style="font-size: 1.1rem; font-weight: 800;">Sprinter 170" Off-Grid Package</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">5.1 kWh Solar • Sub-Zero Rated • Carbon Apex Tent</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SHOPPABLE BEHANCE BENTO MATRIX V2 -->
+  <section class="section-v2" id="v2-bento">
+    <div class="section-head-v2">
+      <div>
+        <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">CURATED SYSTEMS</span>
+        <h2 style="font-size: 2.4rem; margin-top: 6px;">Expedition Hardware Collections</h2>
+      </div>
+      <a href="#v2-catalog" style="font-weight: 700; color: var(--accent-primary);">View All Hardware →</a>
+    </div>
+
+    <div class="bento-v2-grid">
+      <div class="bento-v2-card span-2">
+        <img src="assets/solar_generator.jpg" class="bento-v2-img" alt="Solar Generator" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+        <div>
+          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">01 • POWER SYSTEMS</span>
+          <h3 style="font-size: 1.8rem; margin: 12px 0 8px;">Aurora X1 Off-Grid Solar Hub</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">2400W continuous lithium power station with rapid 400W solar panel charging array.</p>
+          <button class="btn-v2-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="openV2QuickView(2)">Inspect Hardware</button>
+        </div>
+      </div>
+
+      <div class="bento-v2-card">
+        <img src="assets/cat_tent.jpg" class="bento-v2-img" alt="Rooftop Tent" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+        <div>
+          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">02 • SHELTERS</span>
+          <h3 style="font-size: 1.4rem; margin: 10px 0 6px;">Apex Carbon Tent</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Deploy 3-season shelter in 120 seconds.</p>
+          <button class="btn-v2-primary" style="padding: 8px 18px; font-size: 0.85rem;" onclick="openV2QuickView(1)">Quick Add</button>
+        </div>
+      </div>
+
+      <div class="bento-v2-card">
+        <img src="assets/cat_kitchen.jpg" class="bento-v2-img" alt="Kitchen" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+        <div>
+          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">03 • LIVING</span>
+          <h3 style="font-size: 1.4rem; margin: 10px 0 6px;">Titanium Kitchen</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Slide-out dual burner & teak wood bay.</p>
+          <button class="btn-v2-primary" style="padding: 8px 18px; font-size: 0.85rem;" onclick="openV2QuickView(4)">Quick Add</button>
+        </div>
+      </div>
+
+      <div class="bento-v2-card span-2">
+        <img src="assets/cat_recovery.jpg" class="bento-v2-img" alt="Recovery" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+        <div>
+          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">04 • RECOVERY & HARDPOINT</span>
+          <h3 style="font-size: 1.8rem; margin: 12px 0 8px;">Heavy-Duty Recovery Tracks & Racks</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">10-ton nylon composite traction boards designed for heavy adventure rigs.</p>
+          <button class="btn-v2-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="openV2QuickView(5)">Inspect Hardware</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PRODUCT MATRIX V2 -->
+  <section class="section-v2" id="v2-catalog">
+    <div class="section-head-v2">
+      <div>
+        <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">OVERLAND EQUIPMENT MATRIX</span>
+        <h2 style="font-size: 2.4rem; margin-top: 6px;">Explore Hardware Catalog</h2>
+      </div>
+    </div>
+
+    <div class="product-matrix-v2" id="v2-products-matrix">
+      <!-- Injected dynamically via app_v2.js -->
+    </div>
+  </section>
+
+  <!-- 6. THE OVERLAND JOURNAL (BEHANCE EDITORIAL FEATURE) -->
+  <section class="section-v2" id="v2-journal" style="background: var(--bg-secondary); border-radius: var(--radius-lg); margin-bottom: 80px;">
+    <div class="section-head-v2" style="border-bottom: none; margin-bottom: 32px;">
+      <div>
+        <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">THE OVERLAND JOURNAL</span>
+        <h2 style="font-size: 2.4rem; margin-top: 6px;">Expedition Stories & Rig Field Tests</h2>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
+      <article style="background: var(--bg-card); border-radius: var(--radius-md); padding: 28px; border: var(--card-border-width) solid var(--border-color);">
+        <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">FIELD TEST • TASMANIA OUTBACK</span>
+        <h3 style="font-size: 1.4rem; margin: 12px 0 8px;">Living 30 Days Off-Grid in a Sprinter 170</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+          How our 5.1 kWh lithium power array maintained constant sub-zero heating and refrigeration across 4,000 km of backcountry terrain.
+        </p>
+        <a href="javascript:void(0)" style="font-weight: 700; color: var(--accent-primary);" onclick="showToastV2('Journal Article Loaded')">Read Field Report →</a>
+      </article>
+
+      <article style="background: var(--bg-card); border-radius: var(--radius-md); padding: 28px; border: var(--card-border-width) solid var(--border-color);">
+        <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">HARDWARE R&D • KIMBERLEY</span>
+        <h3 style="font-size: 1.4rem; margin: 12px 0 8px;">Testing Apex Carbon Shelters Under 50°C Heat</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+          Thermal insulation benchmarks and rainfly waterproof testing during northern Australia's monsoon season.
+        </p>
+        <a href="javascript:void(0)" style="font-weight: 700; color: var(--accent-primary);" onclick="showToastV2('Journal Article Loaded')">Read Field Report →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER V2 -->
+  <footer style="border-top: var(--card-border-width) solid var(--border-color); padding: 60px 32px 30px; max-width: 1400px; margin: 0 auto;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <a href="index_v2.html" class="brand-v2">
+        <span>▲</span> RV ADVENTURE (VERSION 2)
+      </a>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">
+        © 2026 RV ADVENTURE DESIGN. Behance Light Theme Suite (Concept 1, 2, & 3).
+      </div>
+    </div>
+  </footer>
+
+  <!-- QUICK VIEW MODAL V2 -->
+  <div class="modal-v2" id="v2-modal" onclick="if(event.target === this) closeV2Modal()">
+    <div class="modal-v2-content">
+      <button style="position: absolute; top: 16px; right: 20px; font-size: 1.6rem; color: var(--text-muted);" onclick="closeV2Modal()">&times;</button>
+      <div id="v2-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app_v2.js"></script>
+</body>
+</html>

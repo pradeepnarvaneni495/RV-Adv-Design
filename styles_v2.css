@@ -1,0 +1,507 @@
+/* ==========================================================================
+   RV ADVENTURE DESIGN - VERSION 2 (BEHANCE TRENDING LIGHT THEME SUITE)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CONCEPT 1: ALPINE EDITORIAL MAGAZINE (Default for V2)
+   -------------------------------------------------------------------------- */
+:root, [data-concept="editorial"] {
+  --bg-primary: #fbf9f5;       /* Warm Alabaster Paper */
+  --bg-secondary: #f2ece1;     /* Soft Linen Surface */
+  --bg-card: #ffffff;
+  --bg-glass: rgba(251, 249, 245, 0.92);
+  
+  --border-color: rgba(13, 40, 24, 0.12);
+  --border-glow: rgba(200, 90, 50, 0.3);
+  
+  --text-primary: #0d2818;     /* Deep Alpine Forest Evergreen */
+  --text-secondary: #3d5043;   /* Muted Pine */
+  --text-muted: #788a7e;
+  
+  --accent-primary: #c85a32;   /* Terracotta Rust */
+  --accent-hover: #a3421f;
+  --accent-rgb: 200, 90, 50;
+  --accent-secondary: #0d2818; /* Dark Evergreen */
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  
+  --shadow-subtle: 0 10px 30px rgba(13, 40, 24, 0.05);
+  --shadow-glow: 0 10px 30px rgba(200, 90, 50, 0.15);
+  --glass-backdrop: blur(16px);
+  
+  --card-border-width: 1px;
+  --card-shadow: 0 12px 35px rgba(13, 40, 24, 0.06);
+  --btn-radius: 4px;
+  --badge-bg: rgba(200, 90, 50, 0.1);
+  --badge-color: #c85a32;
+  --hero-font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   2. CONCEPT 2: SCANDINAVIAN NEO-MINIMALIST ARCHITECTURAL
+   -------------------------------------------------------------------------- */
+[data-concept="minimalist"] {
+  --bg-primary: #fafafa;       /* Pure Arctic White */
+  --bg-secondary: #f0f0f0;     /* Ultra Soft Neutral */
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.94);
+  
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-glow: rgba(229, 169, 60, 0.3);
+  
+  --text-primary: #171717;     /* Crisp Neutral Black */
+  --text-secondary: #525252;   /* Slate Gray */
+  --text-muted: #a3a3a3;
+  
+  --accent-primary: #e5a93c;   /* Champagne Gold */
+  --accent-hover: #c48924;
+  --accent-rgb: 229, 169, 60;
+  --accent-secondary: #2d5a40; /* Sage Forest */
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --radius-pill: 9999px;
+  
+  --shadow-subtle: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 30px rgba(229, 169, 60, 0.25);
+  --glass-backdrop: blur(20px);
+  
+  --card-border-width: 1px;
+  --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  --btn-radius: var(--radius-pill);
+  --badge-bg: rgba(229, 169, 60, 0.14);
+  --badge-color: #c48924;
+  --hero-font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   3. CONCEPT 3: TECHNICAL OUTFITTER & INDUSTRIAL BLUEPRINT
+   -------------------------------------------------------------------------- */
+[data-concept="technical"] {
+  --bg-primary: #f3f4f6;       /* Technical Grid Paper Gray */
+  --bg-secondary: #e5e7eb;     /* Metal Slate Gray */
+  --bg-card: #ffffff;
+  --bg-glass: rgba(243, 244, 246, 0.95);
+  
+  --border-color: #1f2937;     /* Dark Micro-Borders */
+  --border-glow: #ff4500;
+  
+  --text-primary: #111827;     /* High Contrast Industrial Black */
+  --text-secondary: #374151;   /* Tactical Gray */
+  --text-muted: #6b7280;
+  
+  --accent-primary: #ff4500;   /* Neon Tactical Orange */
+  --accent-hover: #d03800;
+  --accent-rgb: 255, 69, 0;
+  --accent-secondary: #0284c7; /* Precision Blue */
+  
+  --font-heading: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-pill: 0px;
+  
+  --shadow-subtle: 4px 4px 0px #1f2937;
+  --shadow-glow: 4px 4px 0px #ff4500;
+  --glass-backdrop: none;
+  
+  --card-border-width: 2px;
+  --card-shadow: 4px 4px 0px #1f2937;
+  --btn-radius: 0px;
+  --badge-bg: #ff4500;
+  --badge-color: #ffffff;
+  --hero-font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   4. BASE RESET & GENERAL STYLES
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* --------------------------------------------------------------------------
+   5. CONCEPT SWITCHER TOP BAR (V2 SPECIAL FEATURE)
+   -------------------------------------------------------------------------- */
+.v2-concept-bar {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  z-index: 200;
+  position: relative;
+}
+
+.concept-pills {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.concept-btn {
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.2s ease;
+}
+
+.concept-btn:hover { color: #fff; background: rgba(255,255,255,0.25); }
+.concept-btn.active {
+  background: var(--accent-primary);
+  color: #000;
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* --------------------------------------------------------------------------
+   6. HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.header-v2 {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-bottom: var(--card-border-width) solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.nav-container-v2 {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-v2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-v2 span {
+  color: var(--accent-primary);
+}
+
+.nav-menu-v2 {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-menu-v2 a {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav-menu-v2 a:hover { color: var(--accent-primary); }
+
+.nav-actions-v2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   7. EDITORIAL HERO CANVAS (BEHANCE V2)
+   -------------------------------------------------------------------------- */
+.hero-v2 {
+  padding: 60px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-grid-v2 {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-issue-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-primary);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.hero-title-v2 {
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  line-height: 1.04;
+  margin-bottom: 24px;
+  font-style: var(--hero-font-style);
+}
+
+.hero-title-v2 span {
+  color: var(--accent-primary);
+}
+
+.hero-desc-v2 {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.btn-v2-primary {
+  background: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: var(--btn-radius);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-glow);
+  transition: all 0.3s ease;
+}
+
+.btn-v2-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+.hero-image-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: var(--card-border-width) solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  aspect-ratio: 4 / 3;
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-floating-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: var(--bg-card);
+  border: var(--card-border-width) solid var(--border-color);
+  padding: 18px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  backdrop-filter: var(--glass-backdrop);
+}
+
+/* --------------------------------------------------------------------------
+   8. SHOPPABLE LOOKBOOK & BENTO GRID V2
+   -------------------------------------------------------------------------- */
+.section-v2 {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.section-head-v2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  border-bottom: var(--card-border-width) solid var(--border-color);
+  padding-bottom: 20px;
+}
+
+.bento-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.bento-v2-card {
+  background: var(--bg-card);
+  border: var(--card-border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.35s ease;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.bento-v2-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+}
+
+.bento-v2-card.span-2 { grid-column: span 2; }
+
+.bento-v2-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   9. PRODUCT MATRIX V2
+   -------------------------------------------------------------------------- */
+.product-matrix-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.prod-card-v2 {
+  background: var(--bg-card);
+  border: var(--card-border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.prod-card-v2:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-5px);
+}
+
+.prod-img-v2 {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--bg-secondary);
+}
+
+.prod-body-v2 {
+  padding: 24px;
+}
+
+.prod-title-v2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.prod-price-v2 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+/* Modal Overlay V2 */
+.modal-v2 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-v2.open { opacity: 1; pointer-events: auto; }
+
+.modal-v2-content {
+  background: var(--bg-card);
+  border: var(--card-border-width) solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 750px;
+  width: 90%;
+  box-shadow: var(--card-shadow);
+}
+
+/* Toast */
+.toast-v2 {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent-primary);
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 2000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.toast-v2.show { transform: translateY(0); opacity: 1; }
+
+@media (max-width: 1024px) {
+  .hero-grid-v2 { grid-template-columns: 1fr; }
+  .bento-v2-grid { grid-template-columns: 1fr; }
+  .bento-v2-card.span-2 { grid-column: span 1; }
+}
