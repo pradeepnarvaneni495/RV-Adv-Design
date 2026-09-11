@@ -1,202 +1,435 @@
 <!DOCTYPE html>
-<html lang="en" data-concept="boutique">
+<html lang="en" data-concept="organic">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RV ADVENTURE DESIGN — Version 2 (3 New Light Demos)</title>
-  <meta name="description" content="Next-generation luxury RV outfitting, off-grid lithium solar power stations, and expedition adventure gear designed in 3 distinct Behance light aesthetic demos." />
+  <title>RV ADVENTURE DESIGN — Version 2 (Modern Organic Outdoor Edition)</title>
+  <meta name="description" content="Next-generation luxury RV outfitting, off-grid lithium solar power stations, and expedition adventure gear designed in organic light aesthetic." />
   <link rel="stylesheet" href="styles_v2.css" />
 </head>
 <body>
 
-  <!-- 1. VERSION 2 DEMO SWITCHER TOP BAR -->
-  <div class="demo-bar-v2">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="background: var(--accent-primary); color: #fff; font-weight: 800; padding: 3px 10px; border-radius: var(--radius-pill); font-size: 0.75rem;">VERSION 2 DEMOS</span>
-      <span>Click to switch between 3 new Behance/Dribbble Light Demos:</span>
+  <!-- 1. TOP ANNOUNCEMENT BAR -->
+  <div class="top-bar-v2">
+    <div class="promo-text-v2">
+      <span class="promo-tag-v2">VERSION 2 • ORGANIC LIGHT EDITION</span>
+      <span>Free Nationwide Freight Shipping on Orders Over $1,500</span>
     </div>
-
-    <div class="demo-pills">
-      <button class="demo-btn active" data-set-concept="boutique" onclick="setConcept('boutique')">Demo A: Luxury Boutique</button>
-      <button class="demo-btn" data-set-concept="organic" onclick="setConcept('organic')">Demo B: Organic Nature</button>
-      <button class="demo-btn" data-set-concept="air" onclick="setConcept('air')">Demo C: Neumorphic Air</button>
-      <span style="opacity: 0.3;">|</span>
-      <a href="index.html" style="color: #ff9e2c; font-weight: 700; font-size: 0.8rem; text-decoration: underline;">Switch to Version 1 (Dark)</a>
+    
+    <div class="top-bar-links-v2">
+      <a href="index.html" style="background: #1c261e; color: #fff; font-weight: 800; padding: 3px 12px; border-radius: 9999px;">🌙 Switch to Version 1 (Dark)</a>
+      <span>|</span>
+      <a href="#tracking">Track Order</a>
+      <span>|</span>
+      <a href="#policy">Policy & Returns</a>
+      <span>|</span>
+      <a href="javascript:void(0)" onclick="openV2Login()">Account Login</a>
     </div>
   </div>
 
-  <!-- 2. STICKY HEADER V2 -->
+  <!-- 2. STICKY FLOATING GLASS NAVBAR -->
   <header class="header-v2">
     <nav class="nav-container-v2">
-      <a href="index_v2.html" class="brand-v2">
-        <span>▲</span> RV ADVENTURE
+      <a href="#home" class="brand-v2">
+        <div class="brand-icon-v2">▲</div>
+        <span>RV ADVENTURE</span>
       </a>
 
       <ul class="nav-menu-v2">
-        <li><a href="#v2-hero">Home</a></li>
-        <li><a href="#v2-bento">Collections</a></li>
-        <li><a href="#v2-catalog">Equipment</a></li>
-        <li><a href="#v2-journal">Journal</a></li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#category/all">Categories</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#builder">Rig Configurator</a></li>
+        <li><a href="#tracking">Order Tracking</a></li>
       </ul>
 
       <div class="nav-actions-v2">
-        <button class="btn-v2-primary" style="padding: 10px 22px; font-size: 0.85rem;" onclick="location.href='#v2-catalog'">
-          Explore Catalog
+        <div class="search-bar-v2">
+          <svg class="search-icon-v2" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="v2-search" class="search-input-v2" placeholder="Search solar, tents..." />
+        </div>
+
+        <button class="icon-btn-v2" title="User Account" onclick="openV2Login()">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </button>
 
-        <button style="position: relative; padding: 10px 18px; background: var(--bg-secondary); border-radius: var(--radius-pill); font-weight: 700; border: 1px solid var(--border-color);" onclick="showToastV2('Viewing Cart')">
-          🛒 Cart (<span id="v2-cart-count">1</span>)
+        <button class="icon-btn-v2" title="View Cart" onclick="openV2Cart()">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="badge-count-v2" id="v2-cart-count">1</span>
         </button>
       </div>
     </nav>
   </header>
 
-  <!-- 3. HERO CANVAS V2 -->
-  <section class="hero-v2" id="v2-hero">
-    <div class="hero-grid-v2">
-      <div>
-        <span class="hero-tag-v2">2026 LIGHT DEMO SUITE</span>
-        <h1 class="hero-title-v2">Engineered for <span>Off-Grid Freedom.</span></h1>
-        <p class="hero-desc-v2">
-          Transform your camper van or 4x4 into an unstoppable backcountry sanctuary with military-grade lithium solar stations, carbon rooftop tents, and titanium outfitting modules.
-        </p>
+  <!-- ==========================================================================
+       SPA VIEWS CONTAINER V2
+       ========================================================================== -->
 
-        <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-          <a href="#v2-catalog" class="btn-v2-primary">
-            Explore Equipment
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-          </a>
-          <button class="btn-v2-primary" style="background: var(--bg-secondary); color: var(--text-primary); box-shadow: none; border: 1px solid var(--border-color);" onclick="openV2QuickView(1)">
-            Preview Apex Tent
+  <!-- VIEW 1: HOME PAGE -->
+  <main class="spa-view-v2 active" id="v2-view-home">
+    
+    <!-- Hero Section V2 -->
+    <section class="hero-v2" id="v2-hero">
+      <div class="hero-grid-v2">
+        <div>
+          <span class="hero-tag-v2">⚡ 2026 ORGANIC LIGHT EDITION</span>
+          
+          <h1 class="hero-title-v2">Engineered for <span>Off-Grid Freedom.</span></h1>
+          
+          <p class="hero-desc-v2">
+            Transform your camper van or 4x4 into an organic backcountry sanctuary with military-grade lithium power systems, carbon rooftop tents, and modular gear setups.
+          </p>
+
+          <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+            <a href="#catalog" class="btn-v2-primary">
+              Explore Equipment Catalog
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#builder" class="btn-v2-secondary">
+              ⚡ Custom Rig Configurator
+            </a>
+          </div>
+        </div>
+
+        <!-- Telemetry Card Widget V2 -->
+        <div class="telemetry-card-v2">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border-color);">
+            <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--accent-primary);">Rig Telemetry Specs</span>
+            <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+          </div>
+          <div class="telemetry-stats-v2">
+            <div class="stat-item-v2">
+              <div class="stat-value-v2">5.1 kWh</div>
+              <div class="stat-label-v2">Off-Grid Solar Capacity</div>
+            </div>
+            <div class="stat-item-v2">
+              <div class="stat-value-v2">-30°F</div>
+              <div class="stat-label-v2">Sub-Zero Thermal Spec</div>
+            </div>
+            <div class="stat-item-v2">
+              <div class="stat-value-v2">2-Min</div>
+              <div class="stat-label-v2">Rapid Tent Deployment</div>
+            </div>
+            <div class="stat-item-v2">
+              <div class="stat-value-v2">IP68</div>
+              <div class="stat-label-v2">Water & Dust Resistance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop By Categories Strip V2 -->
+    <section class="section-v2">
+      <div class="section-head-v2">
+        <div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">EXPLORE BY HARDWARE CATEGORY</span>
+          <h2 style="font-size: 2.2rem; margin-top: 6px;">Shop Adventure Equipment</h2>
+        </div>
+      </div>
+      <div class="categories-scroll-row-v2" id="v2-categories-row">
+        <!-- Injected dynamically via app_v2.js -->
+      </div>
+    </section>
+
+    <!-- Shoppable Hotspots V2 -->
+    <section class="section-v2" style="padding-top: 0;">
+      <div class="section-head-v2">
+        <div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">INTERACTIVE RIG EXPLORER</span>
+          <h2 style="font-size: 2.2rem; margin-top: 6px;">Tap Hotspots to Explore Mounted Gear</h2>
+        </div>
+      </div>
+
+      <div class="hotspot-banner-v2">
+        <div class="hotspot-pin-v2" style="top: 18%; left: 75%;" onclick="openV2QuickView(1)">1</div>
+        <div class="hotspot-pin-v2" style="top: 55%; left: 25%;" onclick="openV2QuickView(2)">2</div>
+        <div class="hotspot-pin-v2" style="top: 12%; left: 62%;" onclick="openV2QuickView(3)">3</div>
+        <div class="hotspot-pin-v2" style="top: 72%; left: 70%;" onclick="openV2QuickView(5)">4</div>
+
+        <div class="hotspot-card-v2">
+          <img src="assets/cat_tent.jpg" style="width: 60px; height: 60px; border-radius: var(--radius-sm); object-fit: cover;" alt="Apex Tent" />
+          <div>
+            <h4 style="font-size: 0.9rem;">Apex II Hard-Shell Rooftop Tent</h4>
+            <div style="font-weight: 800; color: var(--accent-primary);">$3,450</div>
+          </div>
+          <button class="btn-v2-primary" style="padding: 6px 14px; font-size: 0.75rem;" onclick="addV2Cart(1)">Quick Add</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid V2 -->
+    <section class="section-v2" id="v2-bento" style="padding-top: 0;">
+      <div class="section-head-v2">
+        <div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">ORGANIC BENTO MATRIX</span>
+          <h2 style="font-size: 2.2rem; margin-top: 6px;">Featured Expedition Systems</h2>
+        </div>
+      </div>
+
+      <div class="bento-v2-grid">
+        <div class="bento-v2-card span-2">
+          <img src="assets/solar_generator.jpg" class="bento-v2-img" alt="Solar" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div>
+            <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">01 • POWER SYSTEMS</span>
+            <h3 style="font-size: 1.8rem; margin: 12px 0 8px;">Off-Grid Lithium Power Array</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">2400W continuous lithium power station with folding solar panels.</p>
+            <button class="btn-v2-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="openV2QuickView(2)">Shop Solar Stations →</button>
+          </div>
+        </div>
+
+        <div class="bento-v2-card">
+          <img src="assets/cat_tent.jpg" class="bento-v2-img" alt="Tents" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div>
+            <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">02 • SHELTERS</span>
+            <h3 style="font-size: 1.4rem; margin: 10px 0 6px;">Apex Carbon Tent</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Deploy 3-season shelter in 120 seconds.</p>
+            <button class="btn-v2-primary" style="padding: 8px 18px; font-size: 0.85rem;" onclick="openV2QuickView(1)">Quick Add</button>
+          </div>
+        </div>
+
+        <div class="bento-v2-card">
+          <img src="assets/cat_kitchen.jpg" class="bento-v2-img" alt="Kitchen" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div>
+            <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">03 • LIVING</span>
+            <h3 style="font-size: 1.4rem; margin: 10px 0 6px;">Titanium Kitchen</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Slide-out dual burner & teak wood bay.</p>
+            <button class="btn-v2-primary" style="padding: 8px 18px; font-size: 0.85rem;" onclick="openV2QuickView(4)">Quick Add</button>
+          </div>
+        </div>
+
+        <div class="bento-v2-card span-2">
+          <img src="assets/cat_recovery.jpg" class="bento-v2-img" alt="Recovery" onError="this.onerror=null; this.src='assets/hero.jpg';" />
+          <div>
+            <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">04 • RECOVERY GEAR</span>
+            <h3 style="font-size: 1.8rem; margin: 12px 0 8px;">Heavy-Duty Recovery Tracks & Racks</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">10-ton nylon composite traction boards designed for heavy adventure rigs.</p>
+            <button class="btn-v2-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="openV2QuickView(5)">Inspect Hardware</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Matrix V2 -->
+    <section class="section-v2" id="catalog">
+      <div class="section-head-v2">
+        <div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">HIGH-PERFORMANCE HARDWARE</span>
+          <h2 style="font-size: 2.2rem; margin-top: 6px;">Explore Equipment Catalog</h2>
+        </div>
+      </div>
+
+      <div class="filter-bar-v2">
+        <div class="category-tabs-v2">
+          <button class="tab-btn-v2 active" onclick="filterV2Category('all', this)">All Items</button>
+          <button class="tab-btn-v2" onclick="filterV2Category('electrical', this)">Off-Grid Power</button>
+          <button class="tab-btn-v2" onclick="filterV2Category('camping', this)">Tents & Shelters</button>
+          <button class="tab-btn-v2" onclick="filterV2Category('4wd', this)">Expedition Gear</button>
+          <button class="tab-btn-v2" onclick="filterV2Category('marine', this)">Kitchen & Living</button>
+        </div>
+      </div>
+
+      <div class="product-matrix-v2" id="v2-products-matrix">
+        <!-- Injected dynamically via app_v2.js -->
+      </div>
+    </section>
+
+    <!-- Interactive Custom Rig Configurator V2 -->
+    <section class="section-v2" id="builder">
+      <div class="builder-v2">
+        <div class="section-head-v2" style="border-bottom: none; padding-bottom: 0; margin-bottom: 32px;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">INTERACTIVE CONFIGURATOR</span>
+            <h2 style="font-size: 2.2rem; margin-top: 6px;">Configure Your RV Outfitting Build</h2>
+          </div>
+        </div>
+
+        <div class="builder-grid-v2">
+          <div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px;">1. Select Vehicle Platform</div>
+              <div class="option-group-v2" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                <div class="option-card-v2 selected" onclick="selectV2Rig('chassis', 'Mercedes Sprinter 170', 68000, this)">
+                  <div style="font-weight: 800;">Sprinter 170"</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$68,000</div>
+                </div>
+                <div class="option-card-v2" onclick="selectV2Rig('chassis', 'Ford Transit AWD 148', 62000, this)">
+                  <div style="font-weight: 800;">Transit AWD</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$62,000</div>
+                </div>
+                <div class="option-card-v2" onclick="selectV2Rig('chassis', 'Rivian R1S Overland', 78000, this)">
+                  <div style="font-weight: 800;">Rivian R1S</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$78,000</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px;">2. Select Off-Grid Power System</div>
+              <div class="option-group-v2" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                <div class="option-card-v2 selected" onclick="selectV2Rig('pack', 'Off-Grid Solar Pack', 8500, this)">
+                  <div style="font-weight: 800;">Solar 5.1kWh</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$8,500</div>
+                </div>
+                <div class="option-card-v2" onclick="selectV2Rig('pack', 'Extreme Lithium 10kWh', 14200, this)">
+                  <div style="font-weight: 800;">Lithium 10kWh</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$14,200</div>
+                </div>
+                <div class="option-card-v2" onclick="selectV2Rig('pack', 'Standard Auxiliary Pack', 4200, this)">
+                  <div style="font-weight: 800;">Standard 2.4kWh</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$4,200</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px;">3. Select Interior Layout</div>
+              <div class="option-group-v2" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                <div class="option-card-v2 selected" onclick="selectV2Rig('interior', 'Adventure Teak & Leather', 12000, this)">
+                  <div style="font-weight: 800;">Teak & Leather</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$12,000</div>
+                </div>
+                <div class="option-card-v2" onclick="selectV2Rig('interior', 'Tactical Lightweight Carbon', 16500, this)">
+                  <div style="font-weight: 800;">Carbon Spec</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$16,500</div>
+                </div>
+                <div class="option-card-v2" onclick="selectV2Rig('interior', 'Minimalist Birch Camper', 8900, this)">
+                  <div style="font-weight: 800;">Birch Camper</div>
+                  <div style="font-size: 0.8rem; color: var(--accent-primary);">$8,900</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rig Summary Box -->
+          <div style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; display: flex; flex-direction: column; justify-content: space-between;" id="v2-rig-summary">
+            <!-- Injected via app_v2.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Logos V2 -->
+    <section class="section-v2" id="brands">
+      <div class="section-head-v2">
+        <div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">AUTHORIZED OUTFITTERS</span>
+          <h2 style="font-size: 2.2rem; margin-top: 6px;">Premier Expedition Brands</h2>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;" id="v2-brand-grid">
+        <!-- Injected via app_v2.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VIEW 2: CATEGORY DETAILS V2 -->
+  <main class="spa-view-v2" id="v2-view-category">
+    <div class="section-v2">
+      <div class="section-head-v2">
+        <h1 id="v2-cat-title">Category Equipment</h1>
+      </div>
+      <div class="product-matrix-v2" id="v2-category-products"></div>
+    </div>
+  </main>
+
+  <!-- VIEW 3: PRODUCT DETAILS V2 -->
+  <main class="spa-view-v2" id="v2-view-product">
+    <div class="section-v2" id="v2-product-detail"></div>
+  </main>
+
+  <!-- VIEW 4: CHECKOUT V2 -->
+  <main class="spa-view-v2" id="v2-view-checkout">
+    <div class="section-v2">
+      <div class="section-head-v2">
+        <h2>Secure Rig Checkout</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; border-radius: var(--radius-lg);">
+          <h3 style="margin-bottom: 20px;">Shipping Details</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+            <input type="text" placeholder="First Name" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm);" />
+            <input type="text" placeholder="Last Name" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm);" />
+            <input type="email" placeholder="Email Address" style="grid-column: span 2; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm);" />
+            <input type="text" placeholder="Street Address" style="grid-column: span 2; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm);" />
+          </div>
+          <button class="btn-v2-primary" style="width: 100%; justify-content: center;" onclick="showToastV2('Order Confirmed! Order #RV-V2-9481 generated.'); window.location.hash='#home';">
+            Place Expedition Order
           </button>
         </div>
-      </div>
 
-      <div class="hero-card-v2">
-        <img src="assets/hero.jpg" alt="Expedition Camper Van" onError="this.onerror=null; this.src='assets/cat_tent.jpg';" />
-        <div style="padding: 24px; background: var(--bg-card); border-top: 1px solid var(--border-color);">
-          <div style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 800; text-transform: uppercase;">AURORA OVERLAND SPEC</div>
-          <div style="font-size: 1.1rem; font-weight: 800; margin-top: 2px;">Sprinter 170" Off-Grid Build</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">5.1 kWh Solar • Sub-Zero Thermal • Carbon Apex Tent</div>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 32px; border-radius: var(--radius-lg); height: fit-content;">
+          <h3>Order Summary</h3>
+          <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 800; margin-top: 20px; color: var(--accent-primary);">
+            <span>Total:</span>
+            <span>$3,450.00</span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- 4. SHOPPABLE BEHANCE BENTO MATRIX V2 -->
-  <section class="section-v2" id="v2-bento">
-    <div class="section-head-v2">
-      <div>
-        <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">FEATURED COLLECTIONS</span>
-        <h2 style="font-size: 2.4rem; margin-top: 6px;">Curated Hardware Systems</h2>
+  <!-- VIEW 5: ORDER TRACKING V2 -->
+  <main class="spa-view-v2" id="v2-view-tracking">
+    <div class="section-v2" style="max-width: 600px;">
+      <div class="section-head-v2" style="text-align: center;">
+        <h2>Track Expedition Order</h2>
       </div>
-      <a href="#v2-catalog" style="font-weight: 700; color: var(--accent-primary);">View All Hardware →</a>
-    </div>
-
-    <div class="bento-v2-grid">
-      <div class="bento-v2-card span-2">
-        <img src="assets/solar_generator.jpg" class="bento-v2-img" alt="Solar Generator" onError="this.onerror=null; this.src='assets/hero.jpg';" />
-        <div>
-          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">01 • POWER SYSTEMS</span>
-          <h3 style="font-size: 1.8rem; margin: 12px 0 8px;">Aurora X1 Off-Grid Solar Station</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 20px;">2400W continuous lithium power station with rapid 400W solar panel charging array.</p>
-          <button class="btn-v2-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="openV2QuickView(2)">Inspect Hardware</button>
-        </div>
-      </div>
-
-      <div class="bento-v2-card">
-        <img src="assets/cat_tent.jpg" class="bento-v2-img" alt="Rooftop Tent" onError="this.onerror=null; this.src='assets/hero.jpg';" />
-        <div>
-          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">02 • SHELTERS</span>
-          <h3 style="font-size: 1.4rem; margin: 10px 0 6px;">Apex Carbon Tent</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Deploy 3-season shelter in 120 seconds.</p>
-          <button class="btn-v2-primary" style="padding: 8px 18px; font-size: 0.85rem;" onclick="openV2QuickView(1)">Quick Add</button>
-        </div>
-      </div>
-
-      <div class="bento-v2-card">
-        <img src="assets/cat_kitchen.jpg" class="bento-v2-img" alt="Kitchen" onError="this.onerror=null; this.src='assets/hero.jpg';" />
-        <div>
-          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">03 • LIVING</span>
-          <h3 style="font-size: 1.4rem; margin: 10px 0 6px;">Titanium Kitchen</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Slide-out dual burner & teak wood bay.</p>
-          <button class="btn-v2-primary" style="padding: 8px 18px; font-size: 0.85rem;" onclick="openV2QuickView(4)">Quick Add</button>
-        </div>
-      </div>
-
-      <div class="bento-v2-card span-2">
-        <img src="assets/cat_recovery.jpg" class="bento-v2-img" alt="Recovery" onError="this.onerror=null; this.src='assets/hero.jpg';" />
-        <div>
-          <span style="font-size: 0.75rem; background: var(--badge-bg); color: var(--badge-color); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 800; text-transform: uppercase;">04 • RECOVERY GEAR</span>
-          <h3 style="font-size: 1.8rem; margin: 12px 0 8px;">Heavy-Duty Recovery Tracks & Racks</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 20px;">10-ton nylon composite traction boards designed for heavy adventure rigs.</p>
-          <button class="btn-v2-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="openV2QuickView(5)">Inspect Hardware</button>
-        </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; border-radius: var(--radius-lg);">
+        <input type="text" placeholder="Order ID (e.g. RV-V2-9481)" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 16px;" />
+        <input type="email" placeholder="Email Address" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 24px;" />
+        <button class="btn-v2-primary" style="width: 100%; justify-content: center;" onclick="showToastV2('Order Status: In Transit via Toll Freight. ETA 2 Days.')">Lookup Telemetry</button>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- 5. PRODUCT MATRIX V2 -->
-  <section class="section-v2" id="v2-catalog">
-    <div class="section-head-v2">
-      <div>
-        <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">OVERLAND EQUIPMENT MATRIX</span>
-        <h2 style="font-size: 2.4rem; margin-top: 6px;">Explore Hardware Catalog</h2>
-      </div>
-    </div>
-
-    <div class="product-matrix-v2" id="v2-products-matrix">
-      <!-- Injected dynamically via app_v2.js -->
-    </div>
-  </section>
-
-  <!-- 6. THE OVERLAND JOURNAL -->
-  <section class="section-v2" id="v2-journal" style="background: var(--bg-secondary); border-radius: var(--radius-lg); margin-bottom: 80px;">
-    <div class="section-head-v2" style="border-bottom: none; margin-bottom: 32px;">
-      <div>
-        <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em;">THE OVERLAND JOURNAL</span>
-        <h2 style="font-size: 2.4rem; margin-top: 6px;">Expedition Stories & Rig Field Tests</h2>
-      </div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
-      <article style="background: var(--bg-card); border-radius: var(--radius-md); padding: 28px; border: 1px solid var(--border-color);">
-        <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">FIELD TEST • TASMANIA OUTBACK</span>
-        <h3 style="font-size: 1.4rem; margin: 12px 0 8px;">Living 30 Days Off-Grid in a Sprinter 170</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-          How our 5.1 kWh lithium power array maintained constant sub-zero heating and refrigeration across 4,000 km of backcountry terrain.
-        </p>
-        <a href="javascript:void(0)" style="font-weight: 700; color: var(--accent-primary);" onclick="showToastV2('Journal Article Loaded')">Read Field Report →</a>
-      </article>
-
-      <article style="background: var(--bg-card); border-radius: var(--radius-md); padding: 28px; border: 1px solid var(--border-color);">
-        <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">HARDWARE R&D • KIMBERLEY</span>
-        <h3 style="font-size: 1.4rem; margin: 12px 0 8px;">Testing Apex Carbon Shelters Under 50°C Heat</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-          Thermal insulation benchmarks and rainfly waterproof testing during northern Australia's monsoon season.
-        </p>
-        <a href="javascript:void(0)" style="font-weight: 700; color: var(--accent-primary);" onclick="showToastV2('Journal Article Loaded')">Read Field Report →</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- 7. FOOTER V2 -->
-  <footer style="border-top: 1px solid var(--border-color); padding: 60px 32px 30px; max-width: 1400px; margin: 0 auto;">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+  <!-- FOOTER V2 -->
+  <footer style="background: var(--bg-card); border-top: 1px solid var(--border-color); padding: 60px 32px 30px; margin-top: 80px;">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
       <a href="index_v2.html" class="brand-v2">
-        <span>▲</span> RV ADVENTURE (VERSION 2)
+        <div class="brand-icon-v2">▲</div>
+        <span>RV ADVENTURE (VERSION 2)</span>
       </a>
       <div style="font-size: 0.85rem; color: var(--text-muted);">
-        © 2026 RV ADVENTURE DESIGN. 3 New Light Demos (Luxury Boutique, Organic Nature, Neumorphic Air).
+        © 2026 RV ADVENTURE DESIGN. Full Version 2 (Modern Organic Outdoor Light Edition).
       </div>
     </div>
   </footer>
+
+  <!-- SLIDE-OUT CART DRAWER V2 -->
+  <div class="cart-drawer-v2" id="v2-cart-drawer">
+    <div class="cart-header-v2">
+      <h3>Your Rig Cart</h3>
+      <button onclick="closeV2Cart()" style="font-size: 1.4rem; color: var(--text-muted);">&times;</button>
+    </div>
+    <div class="cart-body-v2" id="v2-cart-body"></div>
+    <div class="cart-footer-v2">
+      <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 800; margin-bottom: 16px;">
+        <span>Subtotal:</span>
+        <span id="v2-cart-total">$3,450</span>
+      </div>
+      <a href="#checkout" class="btn-v2-primary" style="width: 100%; justify-content: center;" onclick="closeV2Cart()">Proceed to Checkout</a>
+    </div>
+  </div>
 
   <!-- QUICK VIEW MODAL V2 -->
   <div class="modal-v2" id="v2-modal" onclick="if(event.target === this) closeV2Modal()">
     <div class="modal-v2-content">
       <button style="position: absolute; top: 16px; right: 20px; font-size: 1.6rem; color: var(--text-muted);" onclick="closeV2Modal()">&times;</button>
       <div id="v2-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL V2 -->
+  <div class="modal-v2" id="v2-login-modal" onclick="if(event.target === this) closeV2Modal()">
+    <div class="modal-v2-content" style="max-width: 450px;">
+      <button style="position: absolute; top: 16px; right: 20px; font-size: 1.6rem; color: var(--text-muted);" onclick="closeV2Modal()">&times;</button>
+      <h2 style="margin-bottom: 12px; text-align: center;">Account Sign In</h2>
+      <input type="email" placeholder="Email" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 14px;" />
+      <input type="password" placeholder="Password" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 20px;" />
+      <button class="btn-v2-primary" style="width: 100%; justify-content: center;" onclick="showToastV2('Signed in successfully!'); closeV2Modal();">Sign In</button>
     </div>
   </div>
 
