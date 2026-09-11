@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RV ADVENTURE DESIGN - VERSION 2 (BEHANCE LIGHT THEME ENGINE)
+   RV ADVENTURE DESIGN - VERSION 2 (BEHANCE & DRIBBBLE LIGHT SUITE ENGINE)
    ========================================================================== */
 
 const API_CONFIG_V2 = {
@@ -63,24 +63,24 @@ document.addEventListener("DOMContentLoaded", () => {
   updateV2CartUI();
 });
 
-// CONCEPT SWITCHER (Editorial vs Minimalist vs Technical)
+// DEMO CONCEPT SWITCHER (Boutique vs Organic vs Air)
 function initConcept() {
-  const savedConcept = localStorage.getItem("rv_v2_concept") || "editorial";
+  const savedConcept = localStorage.getItem("rv_v2_demo") || "boutique";
   setConcept(savedConcept);
 }
 
 function setConcept(conceptName) {
   document.documentElement.setAttribute("data-concept", conceptName);
-  localStorage.setItem("rv_v2_concept", conceptName);
+  localStorage.setItem("rv_v2_demo", conceptName);
 
-  document.querySelectorAll(".concept-btn").forEach(btn => {
+  document.querySelectorAll(".demo-btn").forEach(btn => {
     btn.classList.toggle("active", btn.getAttribute("data-set-concept") === conceptName);
   });
 
   const titles = {
-    editorial: "Concept 1: Alpine Editorial Magazine",
-    minimalist: "Concept 2: Scandinavian Neo-Minimalist",
-    technical: "Concept 3: Technical Outfitter Blueprint"
+    boutique: "Demo A: Luxury Expedition Boutique",
+    organic: "Demo B: Modern Organic Nature",
+    air: "Demo C: Neumorphic Air & Tech"
   };
 
   showToastV2(`Activated ${titles[conceptName] || conceptName}`);
@@ -94,7 +94,7 @@ function renderV2Products() {
     <div class="prod-card-v2">
       <img src="${p.image}" alt="${p.name}" class="prod-img-v2" onError="this.onerror=null; this.src='assets/cat_tent.jpg';" />
       <div class="prod-body-v2">
-        <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase;">${p.categoryLabel}</span>
+        <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 800; text-transform: uppercase;">${p.categoryLabel}</span>
         <h3 class="prod-title-v2">${p.name}</h3>
         <div style="display: flex; gap: 6px; margin: 12px 0;">
           ${p.specs.map(s => `<span style="font-size: 0.7rem; background: var(--bg-secondary); padding: 3px 8px; border-radius: var(--radius-pill); font-family: var(--font-mono);">${s}</span>`).join('')}
@@ -132,7 +132,7 @@ function openV2QuickView(id) {
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
       <img src="${p.image}" alt="${p.name}" style="border-radius: var(--radius-md); width: 100%; height: 320px; object-fit: cover;" />
       <div>
-        <span style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">${p.categoryLabel}</span>
+        <span style="color: var(--accent-primary); font-weight: 800; font-size: 0.8rem; text-transform: uppercase;">${p.categoryLabel}</span>
         <h2 style="font-size: 1.8rem; margin: 8px 0 12px;">${p.name}</h2>
         <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-primary); margin-bottom: 16px;">$${p.price.toLocaleString()}</div>
         <p style="color: var(--text-secondary); margin-bottom: 20px;">${p.desc}</p>

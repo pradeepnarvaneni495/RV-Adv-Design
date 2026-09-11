@@ -1,149 +1,138 @@
 /* ==========================================================================
-   RV ADVENTURE DESIGN - VERSION 2 (BEHANCE TRENDING LIGHT THEME SUITE)
+   RV ADVENTURE DESIGN - VERSION 2 (NEW BEHANCE & DRIBBBLE LIGHT DEMO SUITE)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* --------------------------------------------------------------------------
-   1. CONCEPT 1: ALPINE EDITORIAL MAGAZINE (Default for V2)
+   DEMO 1: LUXURY EXPEDITION BOUTIQUE (Rimowa / Peak Design Luxury)
    -------------------------------------------------------------------------- */
-:root, [data-concept="editorial"] {
-  --bg-primary: #fbf9f5;       /* Warm Alabaster Paper */
-  --bg-secondary: #f2ece1;     /* Soft Linen Surface */
+:root, [data-concept="boutique"] {
+  --bg-primary: #f4f1ea;       /* Warm Cashmere Silk */
+  --bg-secondary: #e8e3d8;     /* Brushed Cream Surface */
   --bg-card: #ffffff;
-  --bg-glass: rgba(251, 249, 245, 0.92);
+  --bg-glass: rgba(244, 241, 234, 0.94);
   
-  --border-color: rgba(13, 40, 24, 0.12);
-  --border-glow: rgba(200, 90, 50, 0.3);
+  --border-color: rgba(34, 34, 34, 0.12);
+  --border-glow: rgba(197, 160, 89, 0.4);
   
-  --text-primary: #0d2818;     /* Deep Alpine Forest Evergreen */
-  --text-secondary: #3d5043;   /* Muted Pine */
-  --text-muted: #788a7e;
+  --text-primary: #222222;     /* Velvet Charcoal */
+  --text-secondary: #555555;   /* Medium Muted Charcoal */
+  --text-muted: #888888;
   
-  --accent-primary: #c85a32;   /* Terracotta Rust */
-  --accent-hover: #a3421f;
-  --accent-rgb: 200, 90, 50;
-  --accent-secondary: #0d2818; /* Dark Evergreen */
+  --accent-primary: #c5a059;   /* Brushed Champagne Gold */
+  --accent-hover: #9f7d3a;
+  --accent-rgb: 197, 160, 89;
+  --accent-secondary: #222222;
   
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Outfit', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'Outfit', sans-serif;
   
-  --radius-sm: 4px;
-  --radius-md: 10px;
-  --radius-lg: 18px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
   --radius-pill: 9999px;
   
-  --shadow-subtle: 0 10px 30px rgba(13, 40, 24, 0.05);
-  --shadow-glow: 0 10px 30px rgba(200, 90, 50, 0.15);
-  --glass-backdrop: blur(16px);
-  
-  --card-border-width: 1px;
-  --card-shadow: 0 12px 35px rgba(13, 40, 24, 0.06);
-  --btn-radius: 4px;
-  --badge-bg: rgba(200, 90, 50, 0.1);
-  --badge-color: #c85a32;
-  --hero-font-style: italic;
-}
-
-/* --------------------------------------------------------------------------
-   2. CONCEPT 2: SCANDINAVIAN NEO-MINIMALIST ARCHITECTURAL
-   -------------------------------------------------------------------------- */
-[data-concept="minimalist"] {
-  --bg-primary: #fafafa;       /* Pure Arctic White */
-  --bg-secondary: #f0f0f0;     /* Ultra Soft Neutral */
-  --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.94);
-  
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-glow: rgba(229, 169, 60, 0.3);
-  
-  --text-primary: #171717;     /* Crisp Neutral Black */
-  --text-secondary: #525252;   /* Slate Gray */
-  --text-muted: #a3a3a3;
-  
-  --accent-primary: #e5a93c;   /* Champagne Gold */
-  --accent-hover: #c48924;
-  --accent-rgb: 229, 169, 60;
-  --accent-secondary: #2d5a40; /* Sage Forest */
-  
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 30px;
-  --radius-pill: 9999px;
-  
-  --shadow-subtle: 0 8px 30px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 30px rgba(229, 169, 60, 0.25);
+  --shadow-subtle: 0 12px 35px rgba(34, 34, 34, 0.05);
+  --shadow-glow: 0 10px 30px rgba(197, 160, 89, 0.2);
   --glass-backdrop: blur(20px);
   
   --card-border-width: 1px;
-  --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 16px 40px rgba(34, 34, 34, 0.06);
   --btn-radius: var(--radius-pill);
-  --badge-bg: rgba(229, 169, 60, 0.14);
-  --badge-color: #c48924;
-  --hero-font-style: normal;
+  --badge-bg: rgba(197, 160, 89, 0.15);
+  --badge-color: #9f7d3a;
+  --hero-title-transform: uppercase;
 }
 
 /* --------------------------------------------------------------------------
-   3. CONCEPT 3: TECHNICAL OUTFITTER & INDUSTRIAL BLUEPRINT
+   DEMO 2: MODERN ORGANIC OUTDOOR (Patagonia & Snow Peak Earth Vibe)
    -------------------------------------------------------------------------- */
-[data-concept="technical"] {
-  --bg-primary: #f3f4f6;       /* Technical Grid Paper Gray */
-  --bg-secondary: #e5e7eb;     /* Metal Slate Gray */
+[data-concept="organic"] {
+  --bg-primary: #efece6;       /* Raw Sandstone */
+  --bg-secondary: #e2ddd3;     /* Muted Earth Surface */
+  --bg-card: #fffdf9;          /* Canvas Cream */
+  --bg-glass: rgba(239, 236, 230, 0.94);
+  
+  --border-color: rgba(74, 93, 78, 0.15);
+  --border-glow: rgba(188, 90, 69, 0.35);
+  
+  --text-primary: #1c261e;     /* Deep Forest Charcoal */
+  --text-secondary: #4a5d4e;   /* Earth Moss Green */
+  --text-muted: #7d8f81;
+  
+  --accent-primary: #bc5a45;   /* Warm Terracotta Earth */
+  --accent-hover: #983f2c;
+  --accent-rgb: 188, 90, 69;
+  --accent-secondary: #4a5d4e; /* Earth Moss */
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Plus Jakarta Sans', sans-serif;
+  
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --radius-pill: 9999px;
+  
+  --shadow-subtle: 0 10px 30px rgba(28, 38, 30, 0.05);
+  --shadow-glow: 0 10px 30px rgba(188, 90, 69, 0.18);
+  --glass-backdrop: blur(16px);
+  
+  --card-border-width: 1px;
+  --card-shadow: 0 14px 35px rgba(28, 38, 30, 0.06);
+  --btn-radius: var(--radius-pill);
+  --badge-bg: rgba(188, 90, 69, 0.12);
+  --badge-color: #bc5a45;
+  --hero-title-transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   DEMO 3: NEUMORPHIC AIR & TECH (Apple & Lucid Motors Aesthetic)
+   -------------------------------------------------------------------------- */
+[data-concept="air"] {
+  --bg-primary: #f8fafc;       /* Pure Glacial Ice White */
+  --bg-secondary: #e2e8f0;     /* Slate Surface */
   --bg-card: #ffffff;
-  --bg-glass: rgba(243, 244, 246, 0.95);
+  --bg-glass: rgba(248, 250, 252, 0.92);
   
-  --border-color: #1f2937;     /* Dark Micro-Borders */
-  --border-glow: #ff4500;
+  --border-color: rgba(226, 232, 240, 0.9);
+  --border-glow: rgba(2, 132, 199, 0.3);
   
-  --text-primary: #111827;     /* High Contrast Industrial Black */
-  --text-secondary: #374151;   /* Tactical Gray */
-  --text-muted: #6b7280;
+  --text-primary: #0f172a;     /* Deep Obsidian Slate */
+  --text-secondary: #475569;   /* Cool Gray */
+  --text-muted: #94a3b8;
   
-  --accent-primary: #ff4500;   /* Neon Tactical Orange */
-  --accent-hover: #d03800;
-  --accent-rgb: 255, 69, 0;
-  --accent-secondary: #0284c7; /* Precision Blue */
+  --accent-primary: #0284c7;   /* Electric Sky Cyan */
+  --accent-hover: #0369a1;
+  --accent-rgb: 2, 132, 199;
+  --accent-secondary: #0f172a;
   
-  --font-heading: 'JetBrains Mono', monospace;
+  --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'Inter', sans-serif;
   
-  --radius-sm: 0px;
-  --radius-md: 2px;
-  --radius-lg: 4px;
-  --radius-pill: 0px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
   
-  --shadow-subtle: 4px 4px 0px #1f2937;
-  --shadow-glow: 4px 4px 0px #ff4500;
-  --glass-backdrop: none;
+  --shadow-subtle: 0 10px 30px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 30px rgba(2, 132, 199, 0.25);
+  --glass-backdrop: blur(24px) saturate(200%);
   
-  --card-border-width: 2px;
-  --card-shadow: 4px 4px 0px #1f2937;
-  --btn-radius: 0px;
-  --badge-bg: #ff4500;
-  --badge-color: #ffffff;
-  --hero-font-style: normal;
+  --card-border-width: 1px;
+  --card-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
+  --btn-radius: var(--radius-pill);
+  --badge-bg: rgba(2, 132, 199, 0.1);
+  --badge-color: #0284c7;
+  --hero-title-transform: none;
 }
 
-/* --------------------------------------------------------------------------
-   4. BASE RESET & GENERAL STYLES
-   -------------------------------------------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
+/* Base Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -164,13 +153,11 @@ a { color: inherit; text-decoration: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* --------------------------------------------------------------------------
-   5. CONCEPT SWITCHER TOP BAR (V2 SPECIAL FEATURE)
-   -------------------------------------------------------------------------- */
-.v2-concept-bar {
+/* Demo Switcher Top Bar */
+.demo-bar-v2 {
   background: var(--text-primary);
   color: var(--bg-primary);
-  padding: 10px 24px;
+  padding: 12px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -179,34 +166,32 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
 }
 
-.concept-pills {
+.demo-pills {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
 }
 
-.concept-btn {
-  padding: 5px 14px;
+.demo-btn {
+  padding: 6px 16px;
   border-radius: var(--radius-pill);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: rgba(255,255,255,0.7);
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: all 0.2s ease;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.25s ease;
 }
 
-.concept-btn:hover { color: #fff; background: rgba(255,255,255,0.25); }
-.concept-btn.active {
+.demo-btn:hover { color: #fff; background: rgba(255,255,255,0.25); }
+.demo-btn.active {
   background: var(--accent-primary);
-  color: #000;
+  color: #ffffff;
   border-color: var(--accent-primary);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
 }
 
-/* --------------------------------------------------------------------------
-   6. HEADER & NAVIGATION
-   -------------------------------------------------------------------------- */
+/* Header */
 .header-v2 {
   position: sticky;
   top: 0;
@@ -214,7 +199,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--bg-glass);
   backdrop-filter: var(--glass-backdrop);
   -webkit-backdrop-filter: var(--glass-backdrop);
-  border-bottom: var(--card-border-width) solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   transition: all 0.3s ease;
 }
 
@@ -231,15 +216,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 800;
-  text-transform: uppercase;
   letter-spacing: -0.03em;
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.brand-v2 span {
-  color: var(--accent-primary);
 }
 
 .nav-menu-v2 {
@@ -250,11 +230,6 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.95rem;
 }
 
-.nav-menu-v2 a {
-  color: var(--text-secondary);
-  transition: color 0.2s ease;
-}
-
 .nav-menu-v2 a:hover { color: var(--accent-primary); }
 
 .nav-actions-v2 {
@@ -263,47 +238,46 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 16px;
 }
 
-/* --------------------------------------------------------------------------
-   7. EDITORIAL HERO CANVAS (BEHANCE V2)
-   -------------------------------------------------------------------------- */
+/* Hero V2 */
 .hero-v2 {
-  padding: 60px 32px;
+  padding: 70px 32px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .hero-grid-v2 {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 50px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
   align-items: center;
 }
 
-.hero-issue-tag {
+.hero-tag-v2 {
+  display: inline-block;
+  background: var(--badge-bg);
+  color: var(--badge-color);
   font-size: 0.8rem;
   font-weight: 800;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--accent-primary);
-  margin-bottom: 16px;
-  display: block;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
 }
 
 .hero-title-v2 {
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-  line-height: 1.04;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.05;
   margin-bottom: 24px;
-  font-style: var(--hero-font-style);
+  text-transform: var(--hero-title-transform);
 }
 
-.hero-title-v2 span {
-  color: var(--accent-primary);
-}
+.hero-title-v2 span { color: var(--accent-primary); }
 
 .hero-desc-v2 {
   font-size: 1.15rem;
   color: var(--text-secondary);
-  max-width: 540px;
+  max-width: 560px;
   margin-bottom: 40px;
   line-height: 1.7;
 }
@@ -327,36 +301,22 @@ img { max-width: 100%; height: auto; display: block; }
   transform: translateY(-3px);
 }
 
-.hero-image-frame {
+.hero-card-v2 {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: var(--card-border-width) solid var(--border-color);
+  border: 1px solid var(--border-color);
   box-shadow: var(--card-shadow);
-  aspect-ratio: 4 / 3;
+  background: var(--bg-card);
 }
 
-.hero-image-frame img {
+.hero-card-v2 img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.hero-floating-card {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  background: var(--bg-card);
-  border: var(--card-border-width) solid var(--border-color);
-  padding: 18px 24px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-subtle);
-  backdrop-filter: var(--glass-backdrop);
-}
-
-/* --------------------------------------------------------------------------
-   8. SHOPPABLE LOOKBOOK & BENTO GRID V2
-   -------------------------------------------------------------------------- */
+/* Sections */
 .section-v2 {
   max-width: 1400px;
   margin: 0 auto;
@@ -368,10 +328,11 @@ img { max-width: 100%; height: auto; display: block; }
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 48px;
-  border-bottom: var(--card-border-width) solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 20px;
 }
 
+/* Bento Grid */
 .bento-v2-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -380,7 +341,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .bento-v2-card {
   background: var(--bg-card);
-  border: var(--card-border-width) solid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   overflow: hidden;
   padding: 32px;
@@ -389,7 +350,6 @@ img { max-width: 100%; height: auto; display: block; }
   justify-content: space-between;
   transition: all 0.35s ease;
   box-shadow: var(--card-shadow);
-  position: relative;
 }
 
 .bento-v2-card:hover {
@@ -408,9 +368,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 20px;
 }
 
-/* --------------------------------------------------------------------------
-   9. PRODUCT MATRIX V2
-   -------------------------------------------------------------------------- */
+/* Product Matrix */
 .product-matrix-v2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -419,7 +377,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .prod-card-v2 {
   background: var(--bg-card);
-  border: var(--card-border-width) solid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--card-shadow);
@@ -438,14 +396,8 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--bg-secondary);
 }
 
-.prod-body-v2 {
-  padding: 24px;
-}
-
-.prod-title-v2 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
+.prod-body-v2 { padding: 24px; }
+.prod-title-v2 { font-size: 1.2rem; margin-bottom: 8px; }
 
 .prod-price-v2 {
   font-family: var(--font-heading);
@@ -454,7 +406,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--accent-primary);
 }
 
-/* Modal Overlay V2 */
+/* Modal & Toast */
 .modal-v2 {
   position: fixed;
   inset: 0;
@@ -468,12 +420,11 @@ img { max-width: 100%; height: auto; display: block; }
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-
 .modal-v2.open { opacity: 1; pointer-events: auto; }
 
 .modal-v2-content {
   background: var(--bg-card);
-  border: var(--card-border-width) solid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 40px;
   max-width: 750px;
@@ -481,7 +432,6 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: var(--card-shadow);
 }
 
-/* Toast */
 .toast-v2 {
   position: fixed;
   bottom: 30px;
@@ -491,13 +441,12 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 700;
   padding: 14px 28px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   z-index: 2000;
   transform: translateY(100px);
   opacity: 0;
   transition: all 0.3s ease;
 }
-
 .toast-v2.show { transform: translateY(0); opacity: 1; }
 
 @media (max-width: 1024px) {
