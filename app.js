@@ -179,7 +179,35 @@ let state = {
   activeView: "home"
 };
 
-// 2. API REQUEST HELPER WITH FALLBACK
+// 2. THEME SWITCHER CONTROLLER
+function initTheme() {
+  const savedTheme = localStorage.getItem("rv_theme") || "dark";
+  setTheme(savedTheme);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme") || "dark";
+  const newTheme = current === "dark" ? "light" : "dark";
+  setTheme(newTheme);
+  showToast(`Switched to ${newTheme === "light" ? "Alpine Light Mode" : "Dark Luxury Mode"}`);
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("rv_theme", theme);
+  const btn = document.getElementById("theme-toggle-btn");
+  if (btn) {
+    if (theme === "light") {
+      btn.innerHTML = `<span class="theme-icon">☀️</span> <span class="theme-text">Light Mode</span>`;
+      btn.classList.add("light");
+    } else {
+      btn.innerHTML = `<span class="theme-icon">🌙</span> <span class="theme-text">Dark Mode</span>`;
+      btn.classList.remove("light");
+    }
+  }
+}
+
+// 3. API REQUEST HELPER WITH FALLBACK
 async function fetchFromApi(endpoint, params = {}) {
   const urlParams = new URLSearchParams(params).toString();
   const fullUrl = `${currentApiUrl}/${endpoint}${urlParams ? '?' + urlParams : ''}`;
@@ -202,8 +230,9 @@ async function fetchFromApi(endpoint, params = {}) {
   }
 }
 
-// 3. INITIALIZATION & DATA LOADING
+// 4. INITIALIZATION & DATA LOADING
 document.addEventListener("DOMContentLoaded", async () => {
+  initTheme();
   setupRouting();
   await loadInitialData();
   renderHomeCategories();

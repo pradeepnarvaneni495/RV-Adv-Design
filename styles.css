@@ -7,7 +7,7 @@
 /* --------------------------------------------------------------------------
    1. EXCLUSIVE DARK LUXURY DESIGN TOKENS
    -------------------------------------------------------------------------- */
-:root {
+:root, [data-theme="dark"] {
   --bg-primary: #0b0f17;       /* Midnight Obsidian */
   --bg-secondary: #131926;     /* Dark Slate Surface */
   --bg-card: rgba(20, 27, 41, 0.85);
@@ -44,6 +44,64 @@
   --badge-bg: rgba(255, 158, 44, 0.15);
   --badge-color: #ff9e2c;
   --transition-speed: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-primary: #f8f7f4;       /* Sandstone / Soft Pearl */
+  --bg-secondary: #eae7e1;     /* Warm Light Gray Surface */
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  
+  --border-color: rgba(0, 0, 0, 0.12);
+  --border-glow: rgba(217, 119, 6, 0.35);
+  
+  --text-primary: #111827;     /* Crisp Dark Slate */
+  --text-secondary: #374151;   /* Medium Charcoal */
+  --text-muted: #6b7280;
+  
+  --accent-primary: #d97706;   /* Rich Amber Gold */
+  --accent-hover: #b45309;
+  --accent-rgb: 217, 119, 6;
+  --accent-secondary: #1b3b2b; /* Deep Forest Evergreen */
+  
+  --shadow-subtle: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 25px rgba(217, 119, 6, 0.2);
+  --glass-backdrop: blur(16px) saturate(180%);
+  
+  --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --badge-bg: rgba(217, 119, 6, 0.12);
+  --badge-color: #b45309;
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.theme-toggle-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.theme-toggle-pill.light {
+  background: #ffffff;
+  color: #b45309;
+  border-color: #d97706;
 }
 
 /* Base Reset */
